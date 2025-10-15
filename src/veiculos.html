@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciar Veículos</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <h2>Cadastro de Veículos</h2>
+  <form id="formVeiculo">
+    <input type="text" id="placa" placeholder="Placa" required>
+    <input type="text" id="modelo" placeholder="Modelo" required>
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <h3>Veículos Cadastrados</h3>
+  <ul id="listaVeiculos"></ul>
+
+  <button onclick="logout()">Sair</button>
+
+  <script src="../js/script.js"></script>
+  <script>
+    carregarVeiculos();
+    document.getElementById('formVeiculo').onsubmit = (e) => {
+      e.preventDefault();
+      adicionarVeiculo();
+    };
+  </script>
+</body>
+</html>
